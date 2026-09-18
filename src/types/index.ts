@@ -7,6 +7,6 @@ export interface Message {
 }
 
 export interface SseEvent {
-  type: 'status' | 'token' | 'done' | 'unknown'
+  type: 'status' | 'token' | 'done' | 'error' | 'unknown'
   data: string
 }

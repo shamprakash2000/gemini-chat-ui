@@ -42,7 +42,15 @@ export function useChat() {
           setMessages(prev =>
             prev.map(m =>
               m.id === agentMsgId
-                ? { ...m, content: event.data, status: '', isStreaming: false }
+                ? { ...m, content: m.content + event.data, status: '', isStreaming: false }
+                : m,
+            ),
+          )
+        } else if (event.type === 'error') {
+          setMessages(prev =>
+            prev.map(m =>
+              m.id === agentMsgId
+                ? { ...m, content: `⚠️ ${event.data}`, status: '', isStreaming: false }
                 : m,
             ),
           )

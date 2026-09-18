@@ -20,12 +20,15 @@ function parseSseChunk(chunk: string): SseEvent[] {
       if (line.startsWith('event:')) {
         eventType = line.replace('event:', '').trim()
       } else if (line.startsWith('data:')) {
-        data = line.replace('data:', '').trim()
+        const chunk = line.replace('data:', '').trim()
+        data = data ? data + '\n' + chunk : chunk
       }
     }
 
     if (data === '[DONE]') {
       events.push({ type: 'done', data: '' })
+    } else if (eventType === 'error') {
+      events.push({ type: 'error', data })
     } else if (eventType === 'status' || eventType === 'token') {
       events.push({ type: eventType as 'status' | 'token', data })
     }
