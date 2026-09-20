@@ -1,6 +1,10 @@
 # DataPilot UI
 
 React + TypeScript + Vite frontend for the DataPilot AI backend.
+<img width="1917" height="1092" alt="image" src="https://github.com/user-attachments/assets/7dbb7419-86f8-4170-b627-346ac8ce8af7" />
+<img width="1918" height="1086" alt="image" src="https://github.com/user-attachments/assets/5db42751-92e5-4996-860c-7d91fe501c62" />
+
+
 
 ## Stack
 
