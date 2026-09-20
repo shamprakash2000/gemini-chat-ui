@@ -68,7 +68,6 @@ export function ChatMessage({ message, dark }: Props) {
   const userBubbleText = dark ? '#f9fafb' : '#111827'
   const aiText = dark ? '#d4d4d8' : '#27272a'
   const metaColor = dark ? '#52525b' : '#a1a1aa'
-  const statusColor = dark ? '#c4b5fd' : '#7c3aed'
   const ringColor = dark ? '#8b5cf6' : '#8b5cf6'
   const bounceDot = dark ? '#52525b' : '#d4d4d8'
   const toggleActiveBg = dark ? '#3f3f46' : '#18181b'

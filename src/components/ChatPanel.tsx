@@ -41,7 +41,6 @@ export function ChatPanel({ messages, isLoading, onSend, onClear, dark }: Props)
   const mutedColor = dark ? '#52525b' : '#a1a1aa'
   const inputBg = dark ? '#18181b' : '#ffffff'
   const inputBorder = dark ? '#3f3f46' : '#e8e5e0'
-  const placeholderColor = dark ? '#52525b' : '#d4d4d8'
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: bg }}>
