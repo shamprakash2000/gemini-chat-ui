@@ -69,7 +69,7 @@ export function useChat() {
           m.id === agentMsgId
             ? {
                 ...m,
-                content: `Error: ${errorText}. Make sure gemini-chat is running on port 8080.`,
+                content: `Error: ${errorText}. The backend service may be unavailable — please try again shortly.`,
                 isStreaming: false,
                 status: '',
               }
