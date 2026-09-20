@@ -4,6 +4,7 @@ import { QuickActions } from './components/QuickActions'
 import { ChatPanel } from './components/ChatPanel'
 import { useChat } from './hooks/useChat'
 import { useDarkMode } from './hooks/useDarkMode'
+import { wakeServices } from './lib/api'
 import './index.css'
 
 export default function App() {
@@ -11,6 +12,18 @@ export default function App() {
   const { dark, toggle } = useDarkMode()
   const [isMobile, setIsMobile] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  // Wake both Render free-tier services on load. Browser fetch = external traffic,
+  // which is the only kind Render responds to for sleeping services.
+  useEffect(() => { wakeServices() }, [])
+
+  // Re-ping whenever the last message is an MCP-unavailable error.
+  useEffect(() => {
+    const last = messages[messages.length - 1]
+    if (last?.role === 'agent' && last.content.includes('MCP server is not running')) {
+      wakeServices()
+    }
+  }, [messages])
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 767px)')

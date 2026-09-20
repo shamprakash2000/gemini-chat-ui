@@ -1,6 +1,15 @@
 import type { SseEvent } from '../types'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8080'
+const MCP_BASE = import.meta.env.VITE_MCP_BASE_URL ?? 'http://localhost:8082'
+
+// Fire-and-forget pings to wake both Render free-tier services.
+// Must be called from the browser (not the server) so requests originate
+// as external traffic — that's the only kind Render wakes sleeping services for.
+export function wakeServices(): void {
+  fetch(`${API_BASE}/actuator/health`).catch(() => {})
+  fetch(`${MCP_BASE}/actuator/health`).catch(() => {})
+}
 
 // Parse SSE text lines into typed events.
 // Spring Boot SSE format:
