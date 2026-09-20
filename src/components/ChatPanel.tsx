@@ -68,10 +68,10 @@ export function ChatPanel({ messages, isLoading, onSend, onClear, dark, onMenuCl
           )}
           <div>
             <h1 style={{ margin: 0, fontSize: 13, fontWeight: 600, color: titleColor }}>
-              AI Data Assistant
+              DataPilot
             </h1>
             <p style={{ margin: '2px 0 0', fontSize: 10, color: mutedColor }}>
-              Ask questions about your database or knowledge base
+              Your AI-powered data & knowledge assistant
             </p>
           </div>
         </div>

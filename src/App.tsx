@@ -54,9 +54,9 @@ export default function App() {
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{ width: 24, height: 24, borderRadius: 6, background: dark ? '#27272a' : '#18181b', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ color: '#fff', fontSize: 10, fontWeight: 700 }}>G</span>
+            <span style={{ color: '#fff', fontSize: 10, fontWeight: 700 }}>D</span>
           </div>
-          <p style={{ fontSize: 12, fontWeight: 600, color: dark ? '#fafafa' : '#18181b', margin: 0 }}>gemini-chat</p>
+          <p style={{ fontSize: 12, fontWeight: 600, color: dark ? '#fafafa' : '#18181b', margin: 0 }}>DataPilot</p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
           <button
