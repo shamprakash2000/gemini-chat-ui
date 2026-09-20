@@ -67,10 +67,10 @@ export function ChatPanel({ messages, isLoading, onSend, onClear, dark, onMenuCl
             </button>
           )}
           <div>
-            <h1 style={{ margin: 0, fontSize: 13, fontWeight: 600, color: titleColor }}>
+            <h1 style={{ margin: 0, fontSize: 14, fontWeight: 600, color: titleColor }}>
               DataPilot
             </h1>
-            <p style={{ margin: '2px 0 0', fontSize: 10, color: mutedColor }}>
+            <p style={{ margin: '2px 0 0', fontSize: 11, color: mutedColor }}>
               Your AI-powered data & knowledge assistant
             </p>
           </div>
@@ -132,7 +132,7 @@ export function ChatPanel({ messages, isLoading, onSend, onClear, dark, onMenuCl
               ◈
             </div>
             <div>
-              <p style={{ margin: 0, fontWeight: 600, fontSize: 13, color: titleColor }}>
+              <p style={{ margin: 0, fontWeight: 600, fontSize: 14, color: titleColor }}>
                 Ready to help
               </p>
               <p style={{ margin: '4px 0 0', fontSize: 11, color: mutedColor }}>
@@ -183,7 +183,7 @@ export function ChatPanel({ messages, isLoading, onSend, onClear, dark, onMenuCl
               border: 'none',
               outline: 'none',
               background: 'transparent',
-              fontSize: 12,
+              fontSize: 13,
               color: dark ? '#fafafa' : '#18181b',
               lineHeight: 1.5,
               fontFamily: 'inherit',

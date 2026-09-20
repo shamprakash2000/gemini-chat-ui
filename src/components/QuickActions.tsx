@@ -74,7 +74,7 @@ export function QuickActions({ onSelect, disabled, dark }: Props) {
   const sectionLabel = (text: string) => (
     <p
       style={{
-        fontSize: 9,
+        fontSize: 10,
         fontWeight: 600,
         color: dark ? '#52525b' : '#a1a1aa',
         textTransform: 'uppercase',
@@ -112,7 +112,7 @@ export function QuickActions({ onSelect, disabled, dark }: Props) {
           width: '100%',
           textAlign: 'left',
           padding: '5px 16px',
-          fontSize: 11,
+          fontSize: 13,
           color: isActive ? activeText : textColor,
           background: isActive ? hoverBg : 'transparent',
           border: 'none',

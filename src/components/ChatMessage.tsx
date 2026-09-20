@@ -94,7 +94,7 @@ export function ChatMessage({ message, dark }: Props) {
           borderRadius: isUser ? '10px 10px 2px 10px' : 0,
           border: 'none',
           padding: isUser ? '8px 12px' : '0',
-          fontSize: 12,
+          fontSize: 13,
           lineHeight: 1.6,
         }}
       >
@@ -117,7 +117,7 @@ export function ChatMessage({ message, dark }: Props) {
 
         {message.content && (
           isUser ? (
-            <p style={{ margin: 0, whiteSpace: 'pre-wrap', fontSize: 12 }}>{message.content}</p>
+            <p style={{ margin: 0, whiteSpace: 'pre-wrap', fontSize: 13 }}>{message.content}</p>
           ) : (
             <>
               {/* SQL block — always shown regardless of Table/Chart mode */}
@@ -159,7 +159,7 @@ export function ChatMessage({ message, dark }: Props) {
               {showChart && table ? (
                 <TableChart table={table} />
               ) : (
-                <div className={`prose prose-sm max-w-none ${dark ? 'prose-invert' : ''}`}>
+                <div className={`prose prose-sm max-w-none [&_td]:text-[13px] [&_th]:text-[13px] [&_p]:text-[13px] [&_li]:text-[13px] ${dark ? 'prose-invert' : ''}`} style={{ fontSize: 13 }}>
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
