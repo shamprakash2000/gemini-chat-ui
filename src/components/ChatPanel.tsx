@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Trash2, ArrowUp } from 'lucide-react'
+import { Trash2, ArrowUp, Menu } from 'lucide-react'
 import { ChatMessage } from './ChatMessage'
 import type { Message } from '../types'
 
@@ -9,9 +9,10 @@ interface Props {
   onSend: (text: string) => void
   onClear: () => void
   dark: boolean
+  onMenuClick?: () => void
 }
 
-export function ChatPanel({ messages, isLoading, onSend, onClear, dark }: Props) {
+export function ChatPanel({ messages, isLoading, onSend, onClear, dark, onMenuClick }: Props) {
   const [input, setInput] = useState('')
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
@@ -55,13 +56,24 @@ export function ChatPanel({ messages, isLoading, onSend, onClear, dark }: Props)
           background: panelBg,
         }}
       >
-        <div>
-          <h1 style={{ margin: 0, fontSize: 13, fontWeight: 600, color: titleColor }}>
-            AI Data Assistant
-          </h1>
-          <p style={{ margin: '2px 0 0', fontSize: 10, color: mutedColor }}>
-            Ask questions about your database or knowledge base
-          </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          {onMenuClick && (
+            <button
+              onClick={onMenuClick}
+              style={{ padding: 4, border: 'none', background: 'transparent', color: mutedColor, cursor: 'pointer', display: 'flex', alignItems: 'center', borderRadius: 6 }}
+              aria-label="Open menu"
+            >
+              <Menu size={16} />
+            </button>
+          )}
+          <div>
+            <h1 style={{ margin: 0, fontSize: 13, fontWeight: 600, color: titleColor }}>
+              AI Data Assistant
+            </h1>
+            <p style={{ margin: '2px 0 0', fontSize: 10, color: mutedColor }}>
+              Ask questions about your database or knowledge base
+            </p>
+          </div>
         </div>
         {messages.length > 0 && (
           <button
